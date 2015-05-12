@@ -12,6 +12,7 @@
 	var power_p = 20;
 	var func;
 	$(document).ready(function() {
+		//for Safari (that ignores CSRF in local file)
 		if (navigator.vendor.indexOf('Apple') !== -1) {
 			$("#display_safari").css('display', 'block');
 		}
