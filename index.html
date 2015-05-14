@@ -18,7 +18,7 @@
 		}
 		if (window.location.protocol === 'file:' && navigator.vendor.indexOf('Apple') !== -1) {
 			func = function() {
-				var url = 'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=경기과학고등학교+선생님+사랑해요&' + cnt;
+				var url = 'http://m.search.naver.com/search.naver?query=%EA%B2%BD%EA%B8%B0%EA%B3%BC%ED%95%99%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90+%EC%84%A0%EC%83%9D%EB%8B%98+%EC%82%AC%EB%9E%91%ED%95%B4%EC%9A%94&' + cnt;
 				$.ajax({
 					url: url
 				}).done(function(data, status){
@@ -46,8 +46,8 @@
 			interval = setInterval(func, power_p);
 		} else {
 			func = function() {
-				var url = 'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&query=경기과학고등학교+선생님+사랑해요&' + cnt;
-				$.get(url).done(function(){
+				var url = 'https://m.search.naver.com/search.naver?where=m&sm=mtp_sug.top&qdt=0&acq=%EA%B2%BD%EA%B8%B0%EA%B3%BC%ED%95%99%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90&acr=5&ie=utf8&query=%EA%B2%BD%EA%B8%B0%EA%B3%BC%ED%95%99%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90+%EC%84%A0%EC%83%9D%EB%8B%98+%EC%82%AC%EB%9E%91%ED%95%B4%EC%9A%94'//&cache=' + cnt;
+				$.post(url).done(function(){
 					cnt2++;
 					$("#counter_succeed").html(cnt2);
 					$("#counter_traffic").html((0|cnt2 * 9900 / 1024)/100);
