@@ -18,6 +18,7 @@
 		}
 		if (window.location.protocol === 'file:' && navigator.vendor.indexOf('Apple') !== -1) {
 			func = function() {
+				for(var i = 1; i < 3; i++) {
 				var url = 'http://m.search.naver.com/search.naver?query=%EA%B2%BD%EA%B8%B0%EA%B3%BC%ED%95%99%EA%B3%A0%EB%93%B1%ED%95%99%EA%B5%90+%EC%84%A0%EC%83%9D%EB%8B%98+%EC%82%AC%EB%9E%91%ED%95%B4%EC%9A%94&' + cnt;
 				$.ajax({
 					url: url
@@ -30,7 +31,7 @@
 					$("#traffic").html((0|traffic / 1048576 * 100)/100);
 				}).fail(function(xhr, status) {
 					if (status === 'error') {
-						location.href = url;
+						//location.href = url;
 					} else {
 						cnt2++;
 						$("#counter_succeed").html(cnt2);
@@ -42,6 +43,7 @@
 				});
 				cnt++;
 				$("#counter").html(cnt);
+			}
 			};
 			interval = setInterval(func, power_p);
 		} else {
